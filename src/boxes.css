@@ -1,0 +1,155 @@
+/* DEFAULT VARIABLES */
+body {
+  --box-text-color: #222;
+  --box-background-color: #fff;
+  --box-accent-color: #00ae86;
+  --box-shadow-color: #444;
+}
+
+/* BASIC BOX STYLES */
+.box {
+  display: block;
+  color: var(--box-text-color);
+  border: 3px solid var(--box-text-color);
+  border-radius: 3px;
+  padding: 4px 8px;
+  background: var(--box-background-color);
+  font-weight: bold;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  transition: transform 0.2s;
+  margin: 8px 6px 10px 6px;
+  z-index: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.box.wrapper,
+.box.wrapper.inline {
+  display: inline-block;
+  padding: 0;
+}
+
+.box.wrapper > * {
+  margin: 0;
+}
+
+/* INTERACTIVE BLOCK STYLES */
+.box::before {
+  content: "";
+  background: var(--box-background-color);
+  border: 3px solid var(--box-text-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  height: calc(100% + 6px);
+  width: calc(100% + 6px);
+  z-index: -1;
+}
+
+.box:hover,
+.box:focus {
+  transform: translate(2px, 2px);
+}
+
+.box::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  background: var(--box-shadow-color);
+  border: 3px solid var(--box-text-color);
+  border-radius: 3px;
+  height: calc(100% + 6px);
+  width: calc(100% + 6px);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 0;
+  z-index: -2;
+  transition: transform 0.2s;
+}
+
+.box:hover::after,
+.box:focus::after {
+  transform: translate(-2px, -3px);
+}
+
+.box:active {
+  color: var(--box-text-color);
+  transform: translate(3px, 3px);
+}
+
+.box:active::after {
+  transform: translate(-4px, -4px);
+}
+
+.box:focus {
+  outline: none;
+}
+
+.box.fixed {
+  cursor: initial;
+}
+
+/* FIXED STYLES */
+.box.fixed:hover,
+.box.fixed:hover::before,
+.box.fixed:hover::after,
+.box.fixed:active,
+.box.fixed:active::before,
+.box.fixed:active::after,
+.box.fixed:focus,
+.box.fixed:focus::before,
+.box.fixed:focus::after {
+  transform: none;
+}
+
+/* ACCENT STYLES */
+.box.accent {
+  color: var(--box-background-color);
+  background: var(--box-accent-color);
+}
+
+.box.accent::before {
+  background: var(--box-accent-color);
+}
+
+/* INLINE STYLES */
+.box.inline {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 0 6px;
+  margin: 3px 2px 1px 4px;
+}
+.box.inline::after {
+  top: -1px;
+  left: -1px;
+}
+.box.inline:hover,
+.box.inline:focus {
+  transform: translate(1px, 1px);
+}
+.box.inline:hover::after,
+.box.inline:focus::after {
+  transform: translate(-1px, -1px);
+}
+.box.inline:active {
+  transform: translate(2px, 2px);
+}
+
+/* ROUND STYLES */
+.box.round,
+.box.round::before,
+.box.round::after {
+  border-radius: 30px;
+}
+
+.box.round::after {
+  left: 1px;
+}

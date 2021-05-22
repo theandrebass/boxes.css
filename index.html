@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Boxes.css</title>
+        <meta name="title" content="Boxes.css" />
+        <meta name="description" content="Add some dimension to your page with boxes." />
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Boxes.css" />
+        <meta property="og:url" content="https://boxes-css.vercel.app/" />
+        <meta property="og:description" content="Add some dimension to your page with boxes." />
+        <meta property="og:image" content="https://boxes-css.vercel.app/assets/facebook.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Boxes.css" />
+        <meta name="twitter:description" content="Add some dimension to your page with boxes." />
+        <meta property="twitter:url" content="https://boxes-css.vercel.app/" />
+        <meta name="twitter:image" content="https://boxes-css.vercel.app/assets/twitter.png" />
+        <link rel="shortcut icon" href="https://boxes-css.vercel.app/assets/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://boxes-css.vercel.app/assets/apple-touch-icon.png" >
+        <link rel="icon" type="image/png" sizes="32x32" href="https://boxes-css.vercel.app/assets/favicon-32x32.png" >
+        <link rel="icon" type="image/png" sizes="16x16" href="https://boxes-css.vercel.app/assets/favicon-16x16.png" >
+        <link rel="stylesheet" href="/src/reset.css" />
+        <link rel="stylesheet" href="/src/boxes.css" />
+        <link rel="stylesheet" href="/src/simple.css" />
+    </head>
+
+    <main>
+        <h1>🚀 boxes.css 🚀</h1>
+        <p><a href="https://github.com/theandrebass/boxes.css">boxes.css</a> adds a layer of dimension to your web elements. It's light enough that it takes no time to set up or load, but interesting enough that it can serve as the only major CSS on the page.</p>
+        <h2>Basics</h2>
+        <p>boxes.css is a single stylesheet. Get started by adding the stylesheet to your page's head.</p>
+        <pre>&lt;link rel="stylesheet" href="https://unpkg.com/boxes.css/dist/boxes.min.css" /&gt;</pre>
+        <p>This is a boxy button. It's interactive –– try hovering and clicking on it.</p>
+        <button class="box">Hello, World!</button>
+        <p>You can make any element boxy by giving it the class <code>box</code>.</p>
+        <pre>&lt;button class="box"&gt;Hello, World!&lt;/button&gt;</pre>
+        <h3>Accents</h3>
+        <p>This is an <em>accent</em> button. You can make a box accented with the class <code>accent</code>.</p>
+        <button class="accent box">I'm so fancy!</button>
+        <h3>Pills</h3>
+        <p>This is a <em>round</em> button, also sometimes called a "pill". You can make a box round with the class <code>round</code>.</p>
+        <button class="round box">I'm an oval!</button>
+        <h3>Fixed boxes</h3>
+        <p>This is a <em>fixed</em> button, which means it won't respond to any of your inputs or interactions. You can make a box fixed with the class <code>fixed</code>.</p>
+        <button class="fixed box">I'm not moving.</button>
+        <h3>Wrapper boxes</h3>
+        <p>Sometimes, you want to boxify an element like <code>img</code> or <code>input</code>. But these elements can't
+            have children like <code>::before</code> and <code>::after</code> elements, so boxes.css can't work its magic.
+            Instead you'll have to wrap them in a <em>wrapper box</em>, using the <code>wrapper</code> class, like this.
+            (The wrapper class removes padding in the box.)</p>
+        <div class="wrapper box pictureWrapper">
+            <img class="picture" src="assets/Header-5.jpg" alt="Linus's picture">
+        </div>
+        <h3>Inline boxes</h3>
+        <p>Lastly, sometimes you may want to place a box <em>inline</em>, or in the middle of a line of text. You can do
+            so with an <em>inline</em> box, by adding the class <code>inline</code>. Then your boxes can be in the middle
+            of text, <span class="inline box">like this</span>.</p>
+        <h2>Core components</h2>
+        <p>We've only looked at buttons so far, but anything can be boxy. Here are a few examples.</p>
+        <p>These are all just created by either adding the <code>box</code> class on a normal HTML element, or by wrapping normal HTML elements in <code>&lt;div class="wrapper box"&gt;&lt;/div&gt;</code>.</p>
+        <div class="searchbox">
+            <div class="fixed wrapper box">
+                <input type="text" value="This is a boxy input" placeholder="Type something..." />
+            </div>
+            <button class="accent box searchButton">Go!</button>
+        </div>
+        <div class="preWrapper fixed wrapper box">
+            <pre>This is a boxy code box (inside a wrapper)</pre>
+        </div>
+        <div class="fixed wrapper box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JLf9q36UsBk" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card fixed box">
+            <h2>This is a boxy card</h2>
+            <p>... that contains many other elements</p>
+            <button class="box">Like another boxy button</button>
+            <button class="accent box">And an accented button</button>
+        </div>
+        <h2>Theming</h2>
+        <p>You can theme button styles by customizing the colors, using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a>.</p>
+        <p>There are four variables that boxes.css uses:</p>
+        <ul>
+            <li>
+                <p><code>--box-text-color</code> determines the color of text, and the border around the box and its shadow</p>
+            </li>
+            <li>
+                <p><code>--box-background-color</code> is the color of the button background</p>
+            </li>
+            <li>
+                <p><code>--box-accent-color</code> is the background color of accented buttons</p>
+            </li>
+            <li>
+                <p><code>--box-shadow-color</code> is the fill color of the shadow</p>
+            </li>
+        </ul>
+        <p>Here's a more colorful palette, by changing the <code>--box-accent-color</code> within just this div.</p>
+        <div class="color themed">
+            <button class="accent box">Hello, World!</button>
+            <div class="searchbox">
+                <div class="fixed wrapper box">
+                    <input type="text" value="This is a boxy input" placeholder="Type something..." />
+                </div>
+                <button class="accent box searchButton">Go!</button>
+            </div>
+            <div class="card fixed box">
+                <h2>This is a boxy card</h2>
+                <p>... that contains many other elements</p>
+                <button class="box">Like another boxy button</button>
+                <button class="accent box">And an accented button</button>
+            </div>
+        </div>
+        <p>This is a dark theme, made possible by setting the text, background, and shadow colors to be their inverses.</p>
+        <div class="dark themed">
+            <button class="box">Hello, World!</button>
+            <div class="searchbox">
+                <div class="fixed wrapper box">
+                    <input type="text" value="This is a boxy input" placeholder="Type something..." />
+                </div>
+                <button class="accent box searchButton">Go!</button>
+            </div>
+            <div class="card fixed box">
+                <h2>This is a boxy card</h2>
+                <p>... that contains many other elements</p>
+                <button class="box">Like another boxy button</button>
+                <button class="accent box">And an accented button</button>
+            </div>
+        </div>
+    </main>
+</html>

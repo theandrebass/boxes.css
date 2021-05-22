@@ -1,0 +1,107 @@
+/* Extra styles to make the demo look nicer.
+ * Feel free to look around! */
+
+main {
+    margin: 24px auto;
+    max-width: 800px;
+    color: #222;
+}
+
+@media only screen and (max-width: 824px) {
+    main {
+        margin: 24px 12px;
+        width: calc(100% - 24px);
+    }
+    iframe {
+        width: 90vw;
+        height: 56vw;
+    }
+    .preWrapper {
+        width: 100%;
+    }
+    pre {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+input,
+textarea {
+    width: 100%;
+}
+
+h2 {
+    margin-top: 32px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #222;
+}
+
+h2:first-child {
+    margin-top: 8px;
+}
+
+h3 {
+    margin-top: 28px;
+    font-weight: normal;
+}
+
+a {
+    font-weight: bold;
+}
+
+input {
+    border: 0;
+}
+
+.liveEditorContainer {
+    width: 100%;
+    min-height: 380px;
+    height: 40vh;
+}
+
+.liveEditorContainer iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.picture {
+    height: 250px;
+    width: 250px;
+}
+
+.themed {
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+.searchbox {
+    display: flex;
+    flex-drection: row;
+    align-items: center;
+}
+
+.searchbox .searchButton {
+    height: 36px;
+    line-height: 18px;
+}
+
+.color.themed {
+    --box-accent-color: #3a5ec5;
+
+    background: #abcdef;
+}
+
+.dark.themed {
+    --box-text-color: #f8f8f8;
+    --box-background-color: #222;
+    --box-accent-color: #f2d12e;
+    --box-shadow-color: #555;
+
+    background: #444;
+}
+
+.dark.themed input {
+    color: var(--box-text-color);
+    background: var(--box-background-color);
+}

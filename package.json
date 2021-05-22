@@ -1,0 +1,22 @@
+{
+    "name": "boxes.css",
+    "version": "0.4.0",
+    "description": "Add some dimension to your page with boxes",
+    "main": "/src/boxes.css",
+    "repository": "git@github.com:theandrebass/boxes.css.git",
+    "author": "Andre Bass <andrebassbusiness@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "rollup --config rollup.config.js",
+        "clean": "git clean -fxd",
+        "prepublishOnly": "yarn build"
+    },
+    "files": [
+        "src",
+        "dist"
+    ],
+    "devDependencies": {
+        "rollup": "^2.0.6",
+        "rollup-plugin-postcss": "^2.4.1"
+    }
+}
