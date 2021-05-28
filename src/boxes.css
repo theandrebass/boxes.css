@@ -127,14 +127,17 @@ body {
   padding: 0 6px;
   margin: 3px 2px 1px 4px;
 }
+
 .box.inline::after {
   top: -1px;
   left: -1px;
 }
+
 .box.inline:hover,
 .box.inline:focus {
   transform: translate(1px, 1px);
 }
+
 .box.inline:hover::after,
 .box.inline:focus::after {
   transform: translate(-1px, -1px);
